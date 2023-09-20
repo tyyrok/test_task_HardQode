@@ -1,0 +1,26 @@
+[
+    {
+        "model": "learning_app.product",
+        "pk": 1,
+        "fields": {
+            "title": "UX/UI",
+            "owner": 1
+        }
+    },
+    {
+        "model": "learning_app.product",
+        "pk": 2,
+        "fields": {
+            "title": "Backend development",
+            "owner": 1
+        }
+    },
+    {
+        "model": "learning_app.product",
+        "pk": 3,
+        "fields": {
+            "title": "Web development",
+            "owner": 1
+        }
+    }
+]

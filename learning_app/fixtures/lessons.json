@@ -1,0 +1,78 @@
+[
+    {
+        "model": "learning_app.lesson",
+        "pk": 1,
+        "fields": {
+            "title": "HTTP - main Internet protocol",
+            "video_link": "https://http.com",
+            "duration": "01:02:00",
+            "product": [
+                2,
+                3
+            ]
+        }
+    },
+    {
+        "model": "learning_app.lesson",
+        "pk": 2,
+        "fields": {
+            "title": "React and Vue",
+            "video_link": "http://react.com",
+            "duration": "03:23:00",
+            "product": [
+                1,
+                3
+            ]
+        }
+    },
+    {
+        "model": "learning_app.lesson",
+        "pk": 3,
+        "fields": {
+            "title": "Usability",
+            "video_link": "http://sample.com",
+            "duration": "06:32:10",
+            "product": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "learning_app.lesson",
+        "pk": 4,
+        "fields": {
+            "title": "Modern web desing",
+            "video_link": "http://sample.com",
+            "duration": "02:02:50",
+            "product": [
+                1,
+                3
+            ]
+        }
+    },
+    {
+        "model": "learning_app.lesson",
+        "pk": 5,
+        "fields": {
+            "title": "Websockets",
+            "video_link": "http://sample.com",
+            "duration": "01:56:56",
+            "product": [
+                3,
+                2
+            ]
+        }
+    },
+    {
+        "model": "learning_app.lesson",
+        "pk": 6,
+        "fields": {
+            "title": "Blockchain in development",
+            "video_link": "http://sample.com",
+            "duration": "01:05:56",
+            "product": [
+                2
+            ]
+        }
+    }
+]

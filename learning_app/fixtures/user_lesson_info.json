@@ -1,0 +1,146 @@
+[
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 1,
+        "fields": {
+            "watched_time": "00:00:00",
+            "user": 3,
+            "lesson": 1
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 3,
+        "fields": {
+            "watched_time": "01:01:29",
+            "user": 3,
+            "lesson": 5
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 4,
+        "fields": {
+            "watched_time": "00:57:10",
+            "user": 3,
+            "lesson": 6
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 5,
+        "fields": {
+            "watched_time": "00:45:00",
+            "user": 2,
+            "lesson": 2
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 6,
+        "fields": {
+            "watched_time": "02:50:00",
+            "user": 2,
+            "lesson": 3
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 7,
+        "fields": {
+            "watched_time": "01:23:20",
+            "user": 2,
+            "lesson": 4
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 8,
+        "fields": {
+            "watched_time": "00:59:50",
+            "user": 2,
+            "lesson": 5
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 9,
+        "fields": {
+            "watched_time": "00:26:30",
+            "user": 4,
+            "lesson": 1
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 10,
+        "fields": {
+            "watched_time": "02:11:30",
+            "user": 4,
+            "lesson": 2
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 11,
+        "fields": {
+            "watched_time": "01:33:20",
+            "user": 4,
+            "lesson": 3
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 12,
+        "fields": {
+            "watched_time": "00:56:40",
+            "user": 4,
+            "lesson": 4
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 13,
+        "fields": {
+            "watched_time": "00:40:50",
+            "user": 4,
+            "lesson": 5
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 14,
+        "fields": {
+            "watched_time": "00:05:48",
+            "user": 4,
+            "lesson": 6
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 15,
+        "fields": {
+            "watched_time": "00:46:29",
+            "user": 5,
+            "lesson": 1
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 16,
+        "fields": {
+            "watched_time": "00:07:34",
+            "user": 5,
+            "lesson": 2
+        }
+    },
+    {
+        "model": "learning_app.userlessoninfo",
+        "pk": 17,
+        "fields": {
+            "watched_time": "01:50:30",
+            "user": 5,
+            "lesson": 5
+        }
+    }
+]

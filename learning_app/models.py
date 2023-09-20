@@ -1,3 +1,4 @@
+from collections.abc import Iterable
 from django.db import models
 from django.contrib.auth import get_user_model
 from datetime import datetime
@@ -9,14 +10,15 @@ class Product(models.Model):
     owner = models.ForeignKey(to=User, on_delete=models.CASCADE)
     
     def __str__(self) -> str:
-        return f"{self.title} by {self.owner}"
+        return f"{self.title}"
     
 class UserProducts(models.Model):
-    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
-    product = models.ForeignKey(to=Product, on_delete=models.CASCADE)
+    user = models.OneToOneField(to=User, on_delete=models.CASCADE, unique=True)
+    product = models.ManyToManyField(to=Product)
     
     def __str__(self) -> str:
         return f"pk-{self.pk}, User-{self.user.username}"
+    
 
 class Lesson(models.Model):
     product = models.ManyToManyField(to=Product, blank=True)
@@ -28,6 +30,8 @@ class Lesson(models.Model):
         return f"{self.title} - {self.video_link} - {self.duration}"
 
 class UserLessonInfo(models.Model):
+    class Meta:
+        unique_together = ['user', 'lesson']
     STATUS = [
         ('YES', 'Watched'),
         ('NO', 'Not watched'),
@@ -35,6 +39,7 @@ class UserLessonInfo(models.Model):
     watched_time = models.DurationField(default=0)
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
     lesson = models.ForeignKey(to=Lesson, on_delete=models.CASCADE)
+    
     
     @property
     def status(self):
@@ -44,5 +49,17 @@ class UserLessonInfo(models.Model):
             return self.STATUS[1][1]
         
     def __str__(self) -> str:
-        return f"Lesson - {self.lesson.title}, User - {self.user.username}, Status - {self.status}"
+        return f"pk-{self.pk}"
+    
+    def save(self, *args, **kwargs) -> None:
+        """Overriding save method to prevent User add info about 
+        unvailable lessons in admin panel
+        """
+        available_products = self.lesson.product.all()
+        available_lessons = self.user.userproducts.product.all()
+        for lesson in available_lessons:
+            print(lesson)
+            if lesson in available_products:
+                return super().save(*args, **kwargs)
+        return 
         
