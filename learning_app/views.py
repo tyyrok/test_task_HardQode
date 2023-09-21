@@ -1,13 +1,39 @@
 from django.shortcuts import render
-from django.db.models import Prefetch
+from django.db.models import Prefetch, Q, Count, Sum
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.exceptions import ValidationError
-from .models import UserProducts, Lesson, UserLessonInfo
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .models import UserProducts, Lesson, UserLessonInfo, Product
 from .serializers import UserProductSerializer
 from django.contrib.auth import get_user_model
 import re
 
 User = get_user_model()
+
+class StatisticsView(APIView):
+    
+    def get(self, request):
+        result = []
+        products_list = Product.objects.all().prefetch_related('userproducts_set')
+        total_users = User.objects.all().count()
+        for product in products_list:
+            obj = {}
+            obj['Product'] = product.title
+            obj['Number of students'] = product.userproducts_set.all().count()
+            obj['Number of watched lessons'] = (
+                product.lesson_set.all().aggregate(num=Count("userlessoninfo", 
+                                                    filter=Q(userlessoninfo__status="Watched")))
+            )['num']
+            obj['Students time spent sec'] = (
+                product.lesson_set.all().aggregate(num=Sum("userlessoninfo__watched_time"))
+            )['num']
+            obj['Percent of purchasing'] = ( 
+                f"{UserProducts.objects.filter(product=product).count() / total_users :.2%}"
+            )
+            result.append(obj)
+        return Response(data=result, status=status.HTTP_200_OK)
 
 class UserProductView(ListAPIView):
     queryset = UserProducts.objects.none()

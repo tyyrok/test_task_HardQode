@@ -41,27 +41,16 @@ class UserLessonInfo(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
     lesson = models.ForeignKey(to=Lesson, on_delete=models.CASCADE)
     last_time_watched = models.DateTimeField(auto_now=True)
-    
-    
-    @property
-    def status(self):
-        if self.watched_time >= self.lesson.duration * 0.8:
-            return self.STATUS[0][1]
-        else:
-            return self.STATUS[1][1]
+    status = models.CharField(choices=STATUS, max_length=12, blank=True)
         
     def __str__(self) -> str:
         return f"pk-{self.pk}"
     
     def save(self, *args, **kwargs) -> None:
-        """Overriding save method to prevent User add info about 
-        unvailable lessons in admin panel
-        """
-        available_products = self.lesson.product.all()
-        available_lessons = self.user.userproducts.product.all()
-        for lesson in available_lessons:
-            print(lesson)
-            if lesson in available_products:
-                return super().save(*args, **kwargs)
-        return 
+        if self.watched_time >= self.lesson.duration * 0.8:
+            self.status = self.STATUS[0][1]
+        else:
+            self.status = self.STATUS[1][1]
+        print(self.status)
+        return super().save(*args, **kwargs)
         

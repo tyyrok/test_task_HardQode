@@ -7,7 +7,8 @@
         "watched_time": "00:00:00",
         "user": 3,
         "lesson": 1,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
@@ -17,7 +18,8 @@
         "watched_time": "01:01:29",
         "user": 3,
         "lesson": 5,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
@@ -27,7 +29,8 @@
         "watched_time": "00:57:10",
         "user": 3,
         "lesson": 6,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Watched"
     }
 },
 {
@@ -37,7 +40,8 @@
         "watched_time": "00:45:00",
         "user": 2,
         "lesson": 2,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
@@ -47,7 +51,8 @@
         "watched_time": "02:50:00",
         "user": 2,
         "lesson": 3,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
@@ -57,7 +62,8 @@
         "watched_time": "01:23:20",
         "user": 2,
         "lesson": 4,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
@@ -67,7 +73,8 @@
         "watched_time": "00:59:50",
         "user": 2,
         "lesson": 5,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
@@ -77,17 +84,19 @@
         "watched_time": "00:26:30",
         "user": 4,
         "lesson": 1,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
     "model": "learning_app.userlessoninfo",
     "pk": 10,
     "fields": {
-        "watched_time": "02:11:30",
+        "watched_time": "03:11:30",
         "user": 4,
         "lesson": 2,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Watched"
     }
 },
 {
@@ -97,17 +106,19 @@
         "watched_time": "01:33:20",
         "user": 4,
         "lesson": 3,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
     "model": "learning_app.userlessoninfo",
     "pk": 12,
     "fields": {
-        "watched_time": "00:56:40",
+        "watched_time": "01:56:40",
         "user": 4,
         "lesson": 4,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Watched"
     }
 },
 {
@@ -117,7 +128,8 @@
         "watched_time": "00:40:50",
         "user": 4,
         "lesson": 5,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
@@ -127,17 +139,19 @@
         "watched_time": "00:05:48",
         "user": 4,
         "lesson": 6,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
     "model": "learning_app.userlessoninfo",
     "pk": 15,
     "fields": {
-        "watched_time": "00:46:29",
+        "watched_time": "00:52:29",
         "user": 5,
         "lesson": 1,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Watched"
     }
 },
 {
@@ -147,7 +161,8 @@
         "watched_time": "00:07:34",
         "user": 5,
         "lesson": 2,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Not watched"
     }
 },
 {
@@ -157,7 +172,8 @@
         "watched_time": "01:50:30",
         "user": 5,
         "lesson": 5,
-        "last_time_watched": "2023-09-20T17:13:04.602Z"
+        "last_time_watched": "2023-09-20T17:13:04.602Z",
+        "status": "Watched"
     }
 }
 ]
