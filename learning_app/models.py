@@ -1,7 +1,5 @@
-from collections.abc import Iterable
 from django.db import models
 from django.contrib.auth import get_user_model
-from datetime import datetime
 
 User = get_user_model()
 
@@ -13,8 +11,10 @@ class Product(models.Model):
         return f"{self.title}"
     
 class UserProducts(models.Model):
-    user = models.OneToOneField(to=User, on_delete=models.CASCADE, unique=True)
-    product = models.ManyToManyField(to=Product)
+    class Meta:
+        unique_together = ['user', 'product']
+    user = models.ForeignKey(to=User, on_delete=models.CASCADE)
+    product = models.ForeignKey(to=Product, on_delete=models.CASCADE, null=True)
     
     def __str__(self) -> str:
         return f"pk-{self.pk}, User-{self.user.username}"
@@ -32,6 +32,7 @@ class Lesson(models.Model):
 class UserLessonInfo(models.Model):
     class Meta:
         unique_together = ['user', 'lesson']
+        
     STATUS = [
         ('YES', 'Watched'),
         ('NO', 'Not watched'),
@@ -39,6 +40,7 @@ class UserLessonInfo(models.Model):
     watched_time = models.DurationField(default=0)
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
     lesson = models.ForeignKey(to=Lesson, on_delete=models.CASCADE)
+    last_time_watched = models.DateTimeField(auto_now=True)
     
     
     @property
