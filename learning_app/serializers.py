@@ -35,7 +35,7 @@ class ProductSerializer(serializers.ModelSerializer):
         
 class UserProductSerializer(serializers.ModelSerializer):
     product = ProductSerializer()
-    user = UserSerializer()
+    #user = UserSerializer()
     
     class Meta:
         model = UserProducts

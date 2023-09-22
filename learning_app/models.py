@@ -33,24 +33,20 @@ class UserLessonInfo(models.Model):
     class Meta:
         unique_together = ['user', 'lesson']
         
-    STATUS = [
-        ('YES', 'Watched'),
-        ('NO', 'Not watched'),
-    ]
     watched_time = models.DurationField(default=0)
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
     lesson = models.ForeignKey(to=Lesson, on_delete=models.CASCADE)
     last_time_watched = models.DateTimeField(auto_now=True)
-    status = models.CharField(choices=STATUS, max_length=12, blank=True)
+    status = models.CharField(max_length=12, blank=True)
         
     def __str__(self) -> str:
         return f"pk-{self.pk}"
     
     def save(self, *args, **kwargs) -> None:
         if self.watched_time >= self.lesson.duration * 0.8:
-            self.status = self.STATUS[0][1]
+            self.status = 'Watched'
         else:
-            self.status = self.STATUS[1][1]
+            self.status = 'Not watched'
         print(self.status)
         return super().save(*args, **kwargs)
         

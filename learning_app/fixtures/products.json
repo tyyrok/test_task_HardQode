@@ -4,7 +4,7 @@
         "pk": 1,
         "fields": {
             "title": "UX/UI",
-            "owner": 1
+            "owner": 2
         }
     },
     {
@@ -12,7 +12,7 @@
         "pk": 2,
         "fields": {
             "title": "Backend development",
-            "owner": 1
+            "owner": 2
         }
     },
     {
@@ -20,7 +20,7 @@
         "pk": 3,
         "fields": {
             "title": "Web development",
-            "owner": 1
+            "owner": 2
         }
     }
 ]
